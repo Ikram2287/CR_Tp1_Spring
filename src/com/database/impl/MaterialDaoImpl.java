@@ -1,17 +1,22 @@
 package com.database.impl;
 
-import com.database.api.ListMaterial;
 import com.database.api.MaterialDao;
 import com.modele.Materiel;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
+@Component
 public class MaterialDaoImpl implements MaterialDao {
     private int nbBureau, nbChaise;
 
 
     public listMaterielImpl listMateriel;
 
+    //@PostConstruct
+    public void init() {
+        System.out.println("post construct method");
+    }
 
     public MaterialDaoImpl(listMaterielImpl listMaterielImpl) {
         this.listMateriel = listMaterielImpl;

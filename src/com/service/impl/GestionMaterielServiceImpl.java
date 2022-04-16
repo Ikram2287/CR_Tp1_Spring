@@ -5,21 +5,28 @@ import com.database.impl.listMaterielImpl;
 import com.modele.Materiel;
 import com.service.api.GestionMaterielService;
 import com.database.impl.listMaterielImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+
+@Service
 public class GestionMaterielServiceImpl implements GestionMaterielService {
 
 
 
     public listMaterielImpl listMateriel ;
+    @Autowired
     public MaterialDaoImpl materialDao ;
 
-    public int nbBureau = materialDao.getNbBureau();
-    public int nbChaise = materialDao.getNbChaise();
+    public int nbBureau;
+    public int nbChaise;
     GestionMaterielServiceImpl(MaterialDaoImpl materialDao) {
         this.materialDao = materialDao;
     }
     GestionMaterielServiceImpl(){
         this.materialDao =new MaterialDaoImpl(listMateriel);
+        this.nbChaise = materialDao.getNbChaise();
+        this.nbBureau = materialDao.getNbBureau();
     }
 
     @Override
