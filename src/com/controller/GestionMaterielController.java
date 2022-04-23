@@ -4,19 +4,21 @@ import com.modele.Bureau;
 import com.modele.Chaise;
 import com.modele.Materiel;
 import com.service.api.GestionMaterielService;
+import com.service.impl.GestionMaterielServiceImpl;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
-@Controller
-public class GestionMaterielController implements ApplicationContextAware {
+@Component
+public class GestionMaterielController {
 
+    @Autowired
     private GestionMaterielService gestionMaterielService;
-
-    //private ApplicationContextAware applicationContextAware;
 
     public void listerMateriel() {
         gestionMaterielService.listerMateriel();
@@ -79,7 +81,7 @@ public class GestionMaterielController implements ApplicationContextAware {
         System.exit(0);
     }
 
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    public void setGestionMaterielService(GestionMaterielServiceImpl gestionMaterielService) {
     this.gestionMaterielService = gestionMaterielService;
     }
 }

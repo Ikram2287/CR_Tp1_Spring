@@ -6,14 +6,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
+
 public class MaterialDaoImpl implements MaterialDao {
     private int nbBureau, nbChaise;
 
 
     public listMaterielImpl listMateriel;
 
-    //@PostConstruct
     public void init() {
         System.out.println("post construct method");
     }

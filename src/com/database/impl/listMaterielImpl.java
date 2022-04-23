@@ -4,12 +4,14 @@ import com.database.api.ListMaterial;
 import com.modele.Bureau;
 import com.modele.Chaise;
 import com.modele.Materiel;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class listMaterielImpl implements ListMaterial {
-    ArrayList<Materiel> materiels = new ArrayList<>(1);
+    ArrayList<Materiel> materiels = new ArrayList<>();
 
 
     @Override

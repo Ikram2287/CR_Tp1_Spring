@@ -6,28 +6,60 @@ import com.modele.Materiel;
 import com.service.api.GestionMaterielService;
 import com.database.impl.listMaterielImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 
-@Service
+//@Service
+@Component
 public class GestionMaterielServiceImpl implements GestionMaterielService {
 
-
-
-    public listMaterielImpl listMateriel ;
     @Autowired
-    public MaterialDaoImpl materialDao ;
+    private int nbBureau;
+    @Autowired
+    private int nbChaise;
 
-    public int nbBureau;
-    public int nbChaise;
-    GestionMaterielServiceImpl(MaterialDaoImpl materialDao) {
+    @Autowired
+    private listMaterielImpl listMateriel ;
+
+    @Autowired
+    private MaterialDaoImpl materialDao ;
+
+    public int getNbBureau() {
+        return nbBureau;
+    }
+
+    public int getNbChaise() {
+        return nbChaise;
+    }
+
+    public void setNbBureau(int nbBureau) {
+        this.nbBureau = nbBureau;
+    }
+
+    public void setNbChaise(int nbChaise) {
+        this.nbChaise = nbChaise;
+    }
+
+    public void setMaterialDao(MaterialDaoImpl materialDao) {
         this.materialDao = materialDao;
     }
-    GestionMaterielServiceImpl(){
+
+    public void setListMateriel(listMaterielImpl listMateriel) {
+        this.listMateriel = listMateriel;
+    }
+
+
+
+
+    /*GestionMaterielServiceImpl(MaterialDaoImpl materialDao) {
+        this.materialDao = materialDao;
+    }*/
+    /*GestionMaterielServiceImpl(){
         this.materialDao =new MaterialDaoImpl(listMateriel);
         this.nbChaise = materialDao.getNbChaise();
         this.nbBureau = materialDao.getNbBureau();
-    }
+    }*/
 
     @Override
     public void init() {

@@ -3,7 +3,9 @@ package com.listeners;
 import com.modele.Materiel;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ApplicationPublisher implements ApplicationEventPublisherAware {
     private ApplicationEventPublisher applicationEventPublisher;
 

@@ -9,7 +9,7 @@
         <constructor-arg ref="listMateriel"/>
     </bean>
     <bean id="gestionMaterielService" class="com.service.impl.GestionMaterielServiceImpl">
-        <property name="materielDao" ref="materielDAO" />
+        <property name="materielDao" ref="materielDao" />
     </bean>
 
     <bean id="listMateriel" class="com.database.impl.listMaterielImpl">
